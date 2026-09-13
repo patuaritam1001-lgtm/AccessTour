@@ -667,45 +667,43 @@ footer a:hover{
 }
 
 
-i have this right now 
-
-
 /* ================= MOBILE ================= */
 
-        justify-content:center;
-    }
+@media(max-width:900px){
 
-    .hero-art{@media(max-width:900px){
+    .nav-links{
+        display:none;
+    }
 
-    .nav-links{
-        display:none;
-    }
+    .hero{
 
-    .hero{
+        flex-direction:column;
 
-        flex-direction:column;
+        text-align:center;
 
-        text-align:center;
+        padding-top:125px;
+    }
 
-        padding-top:125px;
-    }
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
 
-    .hero p{
-        margin-left:auto;
-        margin-right:auto;
-    }
+    .hero-buttons{
+        justify-content:center;
+    }
 
-    .hero-buttons{
+    .hero-art{
+        width:90%;
+        height:390px;
+    }
 
-        width:90%;
-        height:390px;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
 }
+
 
 /* ================= SMALL MOBILE ================= */
 
