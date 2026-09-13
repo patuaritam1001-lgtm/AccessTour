@@ -671,45 +671,39 @@ footer a:hover{
 
 @media (max-width: 900px) {
 
-    /* Slim down the top bar header thickness */
+    /* Keep header clean and give it enough space so text doesn't overlap */
     .navbar {
         flex-direction: column;
         align-items: center;
-        padding: 8px 12px;
-        min-height: auto;
+        padding: 10px 15px;
     }
 
-    /* Keep the logo / brand name (Accessible Tour) strictly on top */
     .navbar .logo, 
     .logo {
-        order: 1;
-        margin-bottom: 5px;
-        font-size: 20px;
+        margin-bottom: 8px;
+        font-size: 22px;
     }
 
-    /* Wrap all links and the Create Profile button neatly right below the logo */
+    /* Wrap navigation links nicely into two centered rows so nothing gets cut off */
     .nav-links {
-        order: 2;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 8px;
+        gap: 6px 10px;
         width: 100%;
-        margin: 0;
+        margin: 0 0 10px 0;
         padding: 0;
         list-style: none;
     }
 
-    /* Make text links slim and thin */
     .nav-links a {
-        font-size: 13px;
-        padding: 4px 8px;
-        font-weight: normal;
+        font-size: 12px;
+        padding: 4px 6px;
     }
 
-    /* Decrease thickness and size of the Create Profile button */
+    /* Bring the Create Profile button neatly into the center flow */
     .nav-links .btn, 
     .nav-links a.btn, 
     .create-profile-btn {
@@ -719,19 +713,18 @@ footer a:hover{
         width: auto !important;
         height: auto !important;
         padding: 4px 10px !important;
-        font-size: 13px !important;
-        line-height: normal !important;
+        font-size: 12px !important;
         background-color: #00838f;
         color: white !important;
         border-radius: 15px;
         text-align: center;
-        box-shadow: none;
     }
 
+    /* Push the main hero section down just enough so it never hides behind the header */
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 30px;
+        padding-top: 20px;
     }
 
     .hero p {
@@ -739,12 +732,20 @@ footer a:hover{
         margin-right: auto;
     }
 
+    /* Restore the hero layout so your image and buttons don't get cut or distorted */
     .hero-buttons {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 15px;
+    }
+
+    .hero-art, .hero img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 
     .footer-grid {
