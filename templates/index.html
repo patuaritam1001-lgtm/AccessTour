@@ -671,19 +671,67 @@ footer a:hover{
 
 @media (max-width: 900px) {
 
-    .nav-links {
-        display: flex;
+    /* Slim down the top bar header thickness */
+    .navbar {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        padding: 8px 12px;
+        min-height: auto;
+    }
+
+    /* Keep the logo / brand name (Accessible Tour) strictly on top */
+    .navbar .logo, 
+    .logo {
+        order: 1;
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
+    /* Wrap all links and the Create Profile button neatly right below the logo */
+    .nav-links {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
         width: 100%;
-        margin-top: 15px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Make text links slim and thin */
+    .nav-links a {
+        font-size: 13px;
+        padding: 4px 8px;
+        font-weight: normal;
+    }
+
+    /* Decrease thickness and size of the Create Profile button */
+    .nav-links .btn, 
+    .nav-links a.btn, 
+    .create-profile-btn {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: auto !important;
+        height: auto !important;
+        padding: 4px 10px !important;
+        font-size: 13px !important;
+        line-height: normal !important;
+        background-color: #00838f;
+        color: white !important;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: none;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 125px;
+        padding-top: 30px;
     }
 
     .hero p {
@@ -692,8 +740,11 @@ footer a:hover{
     }
 
     .hero-buttons {
-        width: 90%;
-        height: 390px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .footer-grid {
