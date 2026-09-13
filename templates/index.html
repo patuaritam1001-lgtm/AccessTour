@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AccessTour | Travel Without Barriers</title>
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f9fc;
+    color:#17212b;
+    line-height:1.6;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 7%;
+
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(14px);
+
+    box-shadow:0 3px 20px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:800;
+    color:#087f8c;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#124e78;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#263746;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#087f8c;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    border:0;
+    cursor:pointer;
+
+    padding:13px 23px;
+    border-radius:30px;
+
+    font-weight:700;
+
+    background:#087f8c;
+    color:white;
+
+    box-shadow:0 8px 20px rgba(8,127,140,.22);
+
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    background:#056b76;
+}
+
+.btn-outline{
+    background:white;
+    color:#087f8c;
+    border:2px solid #087f8c;
+}
+
+.btn-outline:hover{
+    background:#087f8c;
+    color:white;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+
+    padding:145px 7% 80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:50px;
+
+    background:linear-gradient(
+        135deg,
+        #e9f8fa 0%,
+        #f7fbff 55%,
+        #e7f0fa 100%
+    );
+
+    overflow:hidden;
+}
+
+.hero-text{
+    max-width:620px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:8px 15px;
+    border-radius:30px;
+
+    background:#d8f2f4;
+    color:#08727c;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(45px,6vw,78px);
+    line-height:1.03;
+
+    margin-bottom:22px;
+
+    color:#12334a;
+}
+
+.hero h1 span{
+    color:#087f8c;
+}
+
+.hero p{
+    font-size:19px;
+    color:#536575;
+
+    max-width:560px;
+
+    margin-bottom:32px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+
+/* ================= HERO IMAGE ================= */
+
+.hero-art{
+
+    width:min(500px,45vw);
+    height:500px;
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            rgba(9,57,83,.12),
+            rgba(9,57,83,.25)
+        ),
+        url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+
+    box-shadow:
+        0 30px 70px rgba(22,72,101,.22);
+
+    position:relative;
+}
+
+.floating{
+    position:absolute;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:15px 18px;
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.13);
+
+    font-weight:700;
+}
+
+.f1{
+    left:-30px;
+    top:55px;
+}
+
+.f2{
+    right:-25px;
+    bottom:65px;
+}
+
+
+/* ================= GENERAL SECTIONS ================= */
+
+section{
+    padding:90px 7%;
+}
+
+.section-title{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+}
+
+.section-title h2{
+    font-size:42px;
+    color:#173b53;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#647686;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+
+    padding:30px 23px;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 30px rgba(23,61,84,.08);
+
+    border:1px solid #e8eef2;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(23,61,84,.14);
+}
+
+.icon{
+    width:60px;
+    height:60px;
+
+    border-radius:17px;
+
+    display:grid;
+    place-items:center;
+
+    font-size:29px;
+
+    background:#e1f5f5;
+
+    margin-bottom:20px;
+}
+
+.card h3{
+    margin-bottom:8px;
+    color:#183e55;
+}
+
+.card p{
+    color:#71818e;
+}
+
+
+/* ================= DESTINATIONS ================= */
+
+.destinations{
+    background:#edf5f8;
+}
+
+.destination-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+.destination-link{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.destination{
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 12px 35px rgba(20,61,82,.09);
+
+    transition:.3s;
+
+    height:100%;
+}
+
+.destination:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(20,61,82,.16);
+}
+
+
+/* ================= ONLINE IMAGES ================= */
+
+.destination-img{
+
+    height:230px;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    background-color:#dce9ee;
+}
+
+
+/* =========================================================
+   DESTINATION IMAGES
+   EACH DESTINATION NOW HAS A DIFFERENT IMAGE
+========================================================= */
+
+
+/* 1. JAIPUR - HAWA MAHAL */
+
+.jaipur{
+    background-image:
+    url("https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 2. KERALA - BACKWATERS */
+
+.kerala{
+    background-image:
+    url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 3. GOA - BEACH */
+
+.goa{
+    background-image:
+    url("https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 4. AGRA - TAJ MAHAL */
+
+.agra{
+    background-image:
+    url("https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 5. DELHI - INDIA GATE */
+
+.delhi{
+    background-image:
+    url("https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 6. MUMBAI - GATEWAY OF INDIA */
+
+.mumbai{
+    background-image:
+    url("https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 7. HYDERABAD - CHARMINAR */
+
+.hyderabad{
+    background-image:
+    url("https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 8. AMRITSAR - GOLDEN TEMPLE */
+
+.amritsar{
+    background-image:
+    url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/The_Golden_Temple.jpg/960px-The_Golden_Temple.jpg");
+}
+
+
+/* 9. BENGALURU - CITY/GARDEN */
+
+.bengaluru{
+    background-image:
+    url("https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 10. KOLKATA - VICTORIA MEMORIAL */
+
+.kolkata{
+    background-image:
+    url("https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 11. MYSORE - MYSORE PALACE */
+
+.mysore{
+    background-image:
+    url("https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* 12. VARANASI - GHATS / GANGES */
+
+.varanasi{
+    background-image:
+    url("https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* ================= DESTINATION BODY ================= */
+
+.destination-body{
+    padding:23px;
+}
+
+.destination-body h3{
+    font-size:24px;
+    color:#173b53;
+}
+
+.rating{
+    color:#f1a900;
+    margin:7px 0;
+}
+
+.rating span{
+    color:#687985;
+    font-size:13px;
+    margin-left:4px;
+}
+
+.destination-body p{
+    color:#647686;
+}
+
+
+/* ================= TAGS ================= */
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:7px;
+
+    margin-top:15px;
+}
+
+.tag{
+    font-size:12px;
+
+    padding:6px 10px;
+
+    border-radius:20px;
+
+    background:#e9f6f6;
+
+    color:#08727c;
+
+    font-weight:700;
+}
+
+
+/* ================= PLANNER ================= */
+
+.planner{
+
+    background:
+        linear-gradient(
+            135deg,
+            #124e78,
+            #087f8c
+        );
+
+    color:white;
+
+    text-align:center;
+}
+
+.planner h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.planner p{
+    max-width:650px;
+
+    margin:0 auto 28px;
+
+    color:#dceff1;
+}
+
+.planner .btn{
+    background:white;
+    color:#08727c;
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote{
+    text-align:center;
+    background:white;
+}
+
+.quote blockquote{
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#244b62;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.quote cite{
+    display:block;
+
+    margin-top:18px;
+
+    color:#087f8c;
+
+    font-style:normal;
+
+    font-weight:700;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#102d3e;
+
+    color:#c8d7df;
+
+    padding:55px 7% 25px;
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr;
+
+    gap:40px;
+
+    margin-bottom:35px;
+}
+
+footer h3,
+footer h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:8px 0;
+}
+
+footer a{
+    color:#c8d7df;
+    text-decoration:none;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.copy{
+    text-align:center;
+
+    border-top:
+        1px solid #36515f;
+
+    padding-top:20px;
+
+    font-size:14px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:1000px){
+
+    .destination-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding-top:125px;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-art{
+        width:90%;
+        height:390px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 5%;
+    }
+
+    nav{
+        padding:16px 5%;
+    }
+
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .destination-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .section-title h2,
+    .planner h2{
+        font-size:34px;
+    }
+
+    .f1{
+        left:5px;
+    }
+
+    .f2{
+        right:5px;
+    }
+
+    nav .btn{
+        display:none;
+    }
+
+}
+
+
+/* ================= LIVE ACCESSIBILITY SEARCH ================= */
+
+.search-section{
+    padding:70px 7%;
+    background:#eef8fb;
+}
+
+.search-inner{
+    max-width:1050px;
+    margin:auto;
+    text-align:center;
+    background:#fff;
+    border-radius:24px;
+    padding:42px;
+    box-shadow:0 15px 45px rgba(18,78,120,.10);
+}
+
+.search-badge{
+    display:inline-block;
+    background:#e2f7f7;
+    color:#087f8c;
+    font-weight:800;
+    font-size:.78rem;
+    letter-spacing:.08em;
+    padding:8px 14px;
+    border-radius:999px;
+}
+
+.search-inner h2{
+    font-size:2.25rem;
+    color:#124e78;
+    margin:15px 0 8px;
+}
+
+.search-inner p{
+    max-width:760px;
+    margin:0 auto 24px;
+    color:#5c6b75;
+}
+
+.live-search-form{
+    display:flex;
+    gap:12px;
+    max-width:850px;
+    margin:auto;
+}
+
+.live-search-form input{
+    flex:1;
+    padding:16px 18px;
+    border:2px solid #d7e8ee;
+    border-radius:12px;
+    font-size:1rem;
+    outline:none;
+}
+
+.live-search-form input:focus{
+    border-color:#087f8c;
+}
+
+.live-search-form button{
+    border:0;
+    background:#087f8c;
+    color:#fff;
+    font-weight:800;
+    padding:0 28px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+.search-inner small{
+    display:block;
+    margin-top:14px;
+    color:#74838c;
+}
+
+@media(max-width:600px){
+
+    .search-inner{
+        padding:28px 18px;
+    }
+
+    .live-search-form{
+        flex-direction:column;
+    }
+
+    .live-search-form button{
+        padding:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+
+        ♿ <span>Access</span>Tour
+
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#features">
+                Accessibility
+            </a>
+        </li>
+
+        <li>
+            <a href="#destinations">
+                Destinations
+            </a>
+        </li>
+
+        <li>
+            <a href="#planner">
+                Plan Trip
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+
+    </ul>
+
+
+    <a href="/profile" class="btn">
+        ✈ Create Profile
+    </a>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+
+    <div class="hero-text">
+
+
+        <div class="badge">
+
+            ♿ Inclusive Travel • For Everyone
+
+        </div>
+
+
+        <h1>
+
+            Travel <span>Without</span> Barriers.
+
+        </h1>
+
+
+        <p>
+
+            Discover beautiful destinations, accessible stays
+            and barrier-free travel experiences designed to make
+            every journey comfortable, independent and memorable.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <a href="#destinations"
+               class="btn">
+
+                Explore Destinations →
+
+            </a>
+
+
+            <a href="#features"
+               class="btn btn-outline">
+
+                Learn More
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="hero-art">
+
+
+        <div class="floating f1">
+
+            ♿ Wheelchair Friendly
+
+        </div>
+
+
+        <div class="floating f2">
+
+            ⭐ Accessible Travel
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section id="features">
+
+
+    <div class="section-title">
+
+        <h2>
+            Designed for Every Traveler
+        </h2>
+
+        <p>
+            Accessibility should be part of every journey,
+            not an afterthought.
+        </p>
+
+    </div>
+
+
+
+    <div class="features">
+
+
+        <div class="card">
+
+            <div class="icon">
+                ♿
+            </div>
+
+            <h3>
+                Wheelchair Access
+            </h3>
+
+            <p>
+                Find destinations with ramps, lifts,
+                accessible entrances and pathways.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🦯
+            </div>
+
+            <h3>
+                Visual Assistance
+            </h3>
+
+            <p>
+                Discover places offering clear signage,
+                tactile paths and assistance.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🔊
+            </div>
+
+            <h3>
+                Audio Guidance
+            </h3>
+
+            <p>
+                Explore destinations with audio guides
+                and helpful accessibility information.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🤟
+            </div>
+
+            <h3>
+                Hearing Support
+            </h3>
+
+            <p>
+                Identify locations with visual alerts,
+                captions and sign-language support.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIVE SEARCH
+===================================================== -->
+
+<section class="search-section" id="search">
+
+    <div class="search-inner">
+
+        <div class="search-badge">
+            🌐 LIVE DESTINATION SEARCH
+        </div>
+
+        <h2>
+            Find Accessibility Information
+        </h2>
+
+        <p>
+            Search for a place and AccessTour will fetch
+            the latest available accessibility details
+            from online place data.
+        </p>
+
+        <form
+            class="live-search-form"
+            action="/destination"
+            method="get">
+
+            <input
+                type="text"
+                name="place"
+                placeholder="Search a destination or attraction, e.g. Jaipur, Taj Mahal..."
+                required>
+
+            <button type="submit">
+                🔎 Search
+            </button>
+
+        </form>
+
+        <small>
+            Tip: Try a specific place such as
+            “Taj Mahal Agra” or “Victoria Memorial Kolkata”.
+        </small>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DESTINATIONS
+===================================================== -->
+
+<section
+    class="destinations"
+    id="destinations">
+
+
+    <div class="section-title">
+
+
+        <h2>
+            Explore Accessible India
+        </h2>
+
+
+        <p>
+            Select a destination to discover its
+            accessibility facilities, attractions,
+            transport and travel information.
+        </p>
+
+
+    </div>
+
+
+
+    <div class="destination-grid">
+
+
+
+        <!-- =================================================
+             1 JAIPUR
+        ================================================== -->
+
+        <a
+            href="/destination?place=Jaipur,+Rajasthan"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img jaipur">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Jaipur, Rajasthan
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>
+                            4.8 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Explore historic forts, palaces,
+                        museums and cultural experiences.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚻 Accessible WC
+                        </span>
+
+                        <span class="tag">
+                            🅿 Parking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             2 KERALA
+        ================================================== -->
+
+        <a
+            href="/destination?place=Kerala"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img kerala">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Kerala
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.6 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Discover peaceful backwaters,
+                        beaches and nature experiences.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🏨 Accessible Stay
+                        </span>
+
+                        <span class="tag">
+                            🚐 Transport
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             3 GOA
+        ================================================== -->
+
+        <a
+            href="/destination?place=Goa"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img goa">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Goa
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>
+                            4.9 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Enjoy beaches, heritage attractions
+                        and accessible leisure activities.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🏖 Beach Access
+                        </span>
+
+                        <span class="tag">
+                            🛏 Hotels
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             4 AGRA
+        ================================================== -->
+
+        <a
+            href="/destination?place=Agra"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img agra">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Agra
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★★
+                        <span>
+                            Accessible Attraction
+                        </span>
+                    </div>
+
+                    <p>
+                        Discover the Taj Mahal, Agra Fort
+                        and other historic attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🛗 Accessible Route
+                        </span>
+
+                        <span class="tag">
+                            🚻 WC
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             5 DELHI
+        ================================================== -->
+
+        <a
+            href="/destination?place=New+Delhi"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img delhi">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        New Delhi
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.5 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Explore monuments, museums and
+                        accessible city attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Metro Access
+                        </span>
+
+                        <span class="tag">
+                            🛗 Lifts
+                        </span>
+
+                        <span class="tag">
+                            🚻 WC
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             6 MUMBAI
+        ================================================== -->
+
+        <a
+            href="/destination?place=Mumbai,+Maharashtra"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img mumbai">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Mumbai, Maharashtra
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.5 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Experience India's coastal metropolis
+                        and cultural attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Accessible Transport
+                        </span>
+
+                        <span class="tag">
+                            🚇 Metro
+                        </span>
+
+                        <span class="tag">
+                            🏨 Hotels
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             7 HYDERABAD
+        ================================================== -->
+
+        <a
+            href="/destination?place=Hyderabad,+Telangana"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img hyderabad">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Hyderabad, Telangana
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.5 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Discover historic monuments,
+                        museums and modern city attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚻 Accessible WC
+                        </span>
+
+                        <span class="tag">
+                            🅿 Parking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             8 AMRITSAR
+        ================================================== -->
+
+        <a
+            href="/destination?place=Amritsar,+Punjab"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img amritsar">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Amritsar, Punjab
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.6 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Explore the Golden Temple and
+                        important historical attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚻 Accessible WC
+                        </span>
+
+                        <span class="tag">
+                            🅿 Parking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             9 BENGALURU
+        ================================================== -->
+
+        <a
+            href="/destination?place=Bengaluru,+Karnataka"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img bengaluru">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Bengaluru, Karnataka
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.4 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Explore gardens, museums and
+                        modern attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚇 Metro
+                        </span>
+
+                        <span class="tag">
+                            🏨 Accessible Stay
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             10 KOLKATA
+        ================================================== -->
+
+        <a
+            href="/destination?place=Kolkata,+West+Bengal"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img kolkata">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Kolkata, West Bengal
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.4 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Experience historic architecture,
+                        museums and cultural landmarks.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚇 Metro
+                        </span>
+
+                        <span class="tag">
+                            🚻 WC
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             11 MYSORE
+        ================================================== -->
+
+        <a
+            href="/destination?place=Mysore,+Karnataka"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img mysore">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Mysore, Karnataka
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.5 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Visit grand palaces, gardens and
+                        cultural attractions.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚻 WC
+                        </span>
+
+                        <span class="tag">
+                            🅿 Parking
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             12 VARANASI
+        ================================================== -->
+
+        <a
+            href="/destination?place=Varanasi,+Uttar+Pradesh"
+            class="destination-link">
+
+            <div class="destination">
+
+                <div class="destination-img varanasi">
+                </div>
+
+                <div class="destination-body">
+
+                    <h3>
+                        Varanasi, Uttar Pradesh
+                    </h3>
+
+                    <div class="rating">
+                        ★★★★☆
+                        <span>
+                            4.4 Accessibility
+                        </span>
+                    </div>
+
+                    <p>
+                        Experience the spiritual heritage of
+                        Varanasi, ghats, temples and the Ganges.
+                    </p>
+
+                    <div class="tags">
+
+                        <span class="tag">
+                            ♿ Wheelchair
+                        </span>
+
+                        <span class="tag">
+                            🚻 Accessible WC
+                        </span>
+
+                        <span class="tag">
+                            🚐 Transport
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PLANNER
+===================================================== -->
+
+<section
+    class="planner"
+    id="planner">
+
+    <h2>
+        Ready to Plan Your Journey?
+    </h2>
+
+    <p>
+        Choose your destination and accessibility needs
+        to create a travel experience that works for you.
+    </p>
+
+    <a
+        href="#destinations"
+        class="btn">
+
+        ✈ Explore Destinations
+
+    </a>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="quote"
+    id="about">
+
+    <blockquote>
+        “Accessibility isn't a luxury.
+        It's the freedom to explore the world.”
+    </blockquote>
+
+    <cite>
+        — AccessTour
+    </cite>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-grid">
+
+
+        <div>
+
+            <h3>
+                ♿ AccessTour
+            </h3>
+
+            <p>
+                Making tourism more inclusive,
+                independent and accessible for everyone.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <ul>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features">
+                        Accessibility
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#destinations">
+                        Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#planner">
+                        Plan Your Trip
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Accessibility
+            </h4>
+
+            <ul>
+
+                <li>
+                    Wheelchair Access
+                </li>
+
+                <li>
+                    Visual Assistance
+                </li>
+
+                <li>
+                    Audio Guidance
+                </li>
+
+                <li>
+                    Hearing Support
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copy">
+
+        © 2026 AccessTour •
+        Travel Without Barriers •
+        Inclusive Tourism
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

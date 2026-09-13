@@ -1,0 +1,1121 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>AccessTour | Journey Evaluation</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eefaff,
+            #f7fcff
+        );
+
+    color:#183b56;
+
+    min-height:100vh;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav{
+
+    height:75px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    box-shadow:
+        0 3px 15px
+        rgba(0,0,0,0.08);
+
+}
+
+.logo{
+
+    font-size:25px;
+
+    font-weight:700;
+
+    color:#087f8c;
+
+}
+
+.logo span{
+
+    color:#124e78;
+
+}
+
+.nav-btn{
+
+    text-decoration:none;
+
+    background:#087f8c;
+
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:25px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:55px 20px 35px;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    background:#dff7fa;
+
+    color:#087f8c;
+
+    padding:9px 18px;
+
+    border-radius:25px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+    color:#124e78;
+
+    margin-bottom:12px;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    color:#5c7485;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.container{
+
+    width:90%;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+
+/* =========================================================
+   PROFILE SUMMARY
+========================================================= */
+
+.profile-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px 30px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.profile-card h2{
+
+    color:#124e78;
+
+    margin-bottom:15px;
+
+}
+
+.profile-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:15px;
+
+}
+
+.profile-item{
+
+    background:#f4fbfd;
+
+    border-radius:12px;
+
+    padding:15px;
+
+}
+
+.profile-item strong{
+
+    display:block;
+
+    color:#087f8c;
+
+    margin-bottom:5px;
+
+}
+
+.requirements{
+
+    margin-top:20px;
+
+}
+
+.requirement{
+
+    display:inline-block;
+
+    background:#e8f7fa;
+
+    color:#087f8c;
+
+    padding:8px 13px;
+
+    border-radius:20px;
+
+    margin:4px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   SCORE CARDS
+========================================================= */
+
+.score-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:22px;
+
+    margin-bottom:25px;
+
+}
+
+.score-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.score-title{
+
+    color:#5c7485;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+}
+
+.score{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    color:#087f8c;
+
+}
+
+.score-description{
+
+    color:#718896;
+
+    line-height:1.6;
+
+    margin-top:10px;
+
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:32px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.status-card h2{
+
+    color:#124e78;
+
+    margin-bottom:20px;
+
+}
+
+.status{
+
+    display:inline-block;
+
+    padding:15px 25px;
+
+    border-radius:35px;
+
+    font-size:21px;
+
+    font-weight:800;
+
+}
+
+.status.high{
+
+    background:#e4f8e9;
+
+    color:#218838;
+
+}
+
+.status.review{
+
+    background:#fff5d9;
+
+    color:#9a7000;
+
+}
+
+.status.assistance{
+
+    background:#e4f3ff;
+
+    color:#1671b8;
+
+}
+
+
+/* =========================================================
+   ROUTE NOTES
+========================================================= */
+
+.notes-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.notes-card h2{
+
+    color:#124e78;
+
+    margin-bottom:15px;
+
+}
+
+.notes{
+
+    background:#f4fbfd;
+
+    border-left:
+        5px solid #087f8c;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    line-height:1.7;
+
+    color:#4e6979;
+
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary-card{
+
+    background:
+        linear-gradient(
+            135deg,
+            #087f8c,
+            #124e78
+        );
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+}
+
+.summary-card h2{
+
+    margin-bottom:12px;
+
+}
+
+.summary-card p{
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+
+/* =========================================================
+   REQUIREMENT TABLE
+========================================================= */
+
+.details-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.details-card h2{
+
+    color:#124e78;
+
+    margin-bottom:20px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#eaf8fa;
+
+    color:#124e78;
+
+    padding:14px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:
+        1px solid #edf2f5;
+
+    color:#526b79;
+
+}
+
+td.yes{
+
+    color:#218838;
+
+    font-weight:700;
+
+}
+
+td.no{
+
+    color:#d32f2f;
+
+    font-weight:700;
+
+}
+
+td.unknown{
+
+    color:#8a6d00;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   GOOGLE PLACES
+========================================================= */
+
+.places-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(18,78,120,0.08);
+
+}
+
+.places-card h2{
+
+    color:#124e78;
+
+    margin-bottom:20px;
+
+}
+
+.place{
+
+    padding:18px;
+
+    background:#f7fbfd;
+
+    border-radius:12px;
+
+    margin-bottom:12px;
+
+}
+
+.place h3{
+
+    color:#087f8c;
+
+    margin-bottom:7px;
+
+}
+
+.place p{
+
+    color:#667d8b;
+
+    margin-bottom:5px;
+
+}
+
+.rating{
+
+    color:#c47b00;
+
+    font-weight:700;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#718896;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:750px){
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    .profile-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .score-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    table{
+
+        font-size:13px;
+
+    }
+
+    th,
+    td{
+
+        padding:9px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
+
+<nav>
+
+
+<div class="logo">
+
+    ♿ AccessTour
+    <span>| Journey Evaluation</span>
+
+</div>
+
+<a
+    href="/profile"
+    class="nav-btn">
+
+    ← Edit Profile
+
+</a>
+
+
+</nav>
+
+<!-- ======================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+
+<div class="badge">
+
+    🛡️ Accessibility Analysis
+
+</div>
+
+<h1>
+
+    Journey Compatibility &amp;
+    Risk Evaluation
+
+</h1>
+
+<p>
+
+    Your accessibility requirements are compared
+    with available verified accessibility information
+    for your selected destination.
+
+</p>
+
+
+</section>
+
+<main class="container">
+
+<!-- ======================================================
+     PROFILE SUMMARY
+====================================================== -->
+
+<div class="profile-card">
+
+
+<h2>
+
+    👤 Traveller Profile
+
+</h2>
+
+
+<div class="profile-grid">
+
+    <div class="profile-item">
+
+        <strong>Name</strong>
+
+        {{ profile.name or "Not provided" }}
+
+    </div>
+
+
+    <div class="profile-item">
+
+        <strong>Age</strong>
+
+        {{ profile.age or "Not provided" }}
+
+    </div>
+
+
+    <div class="profile-item">
+
+        <strong>Destination</strong>
+
+        {{ profile.destination or "Not provided" }}
+
+    </div>
+
+</div>
+
+
+<div class="requirements">
+
+    <strong>
+
+        Accessibility Requirements
+
+    </strong>
+
+    <br>
+
+
+    {% if profile.requirements %}
+
+        {% for requirement in profile.requirements %}
+
+            <span class="requirement">
+
+                {{ requirement }}
+
+            </span>
+
+        {% endfor %}
+
+    {% else %}
+
+        <span class="requirement">
+
+            No specific requirements selected
+
+        </span>
+
+    {% endif %}
+
+</div>
+
+
+</div>
+
+<!-- ======================================================
+     SCORE CARDS
+====================================================== -->
+
+<div class="score-grid">
+
+
+<div class="score-card">
+
+    <div class="score-title">
+
+        Compatibility Score
+
+    </div>
+
+    <div class="score">
+
+        {{ compatibility_score }}%
+
+    </div>
+
+    <div class="score-description">
+
+        Measures how well the available
+        accessibility features match the
+        traveller's selected requirements.
+
+    </div>
+
+</div>
+
+
+<div class="score-card">
+
+    <div class="score-title">
+
+        Confidence Score
+
+    </div>
+
+    <div class="score">
+
+        {{ confidence_score }}%
+
+    </div>
+
+    <div class="score-description">
+
+        Indicates how much verified accessibility
+        information was available for this evaluation.
+
+    </div>
+
+</div>
+
+
+</div>
+
+<!-- ======================================================
+     OVERALL STATUS
+====================================================== -->
+
+<div class="status-card">
+
+
+<h2>
+
+    Overall Journey Compatibility
+
+</h2>
+
+<div class="status {{ status_class }}">
+
+    {{ status_icon }}
+    {{ status }}
+
+</div>
+
+
+</div>
+
+<!-- ======================================================
+     ROUTE NOTES
+====================================================== -->
+
+<div class="notes-card">
+
+
+<h2>
+
+    📍 Status / Route Notes
+
+</h2>
+
+<div class="notes">
+
+    {{ route_notes }}
+
+</div>
+
+
+</div>
+
+<!-- ======================================================
+     SUMMARY
+====================================================== -->
+
+<div class="summary-card">
+
+
+<h2>
+
+    🔎 Brief Analysis
+
+</h2>
+
+<p>
+
+    {{ summary }}
+
+</p>
+
+
+</div>
+
+<!-- ======================================================
+     ACCESSIBILITY DETAILS
+====================================================== -->
+
+{% if verified_items %}
+
+<div class="details-card">
+
+
+<h2>
+
+    ♿ Accessibility Requirement Analysis
+
+</h2>
+
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>Requirement</th>
+
+            <th>Tourist Place</th>
+
+            <th>Status</th>
+
+        </tr>
+
+    </thead>
+
+
+    <tbody>
+
+    {% for item in verified_items %}
+
+        <tr>
+
+            <td>
+
+                {{ item.requirement }}
+
+            </td>
+
+            <td>
+
+                {{ item.place }}
+
+            </td>
+
+            <td class="{{ item.class }}">
+
+                {% if item.class == "yes" %}
+
+                    ✅ {{ item.status }}
+
+                {% elif item.class == "no" %}
+
+                    ❌ {{ item.status }}
+
+                {% else %}
+
+                    ⚪ {{ item.status }}
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+    {% endfor %}
+
+    </tbody>
+
+</table>
+
+
+</div>
+
+{% endif %}
+
+<!-- ======================================================
+     TOURIST PLACES
+====================================================== -->
+
+<div class="places-card">
+
+
+<h2>
+
+    📍 Tourist Places Analysed
+
+</h2>
+
+
+{% if places %}
+
+    {% for place in places %}
+
+        <div class="place">
+
+            <h3>
+
+                {{ place.name }}
+
+            </h3>
+
+            <p>
+
+                {{ place.address }}
+
+            </p>
+
+
+            {% if place.rating %}
+
+                <p class="rating">
+
+                    ⭐ {{ place.rating }}
+
+                    {% if place.user_rating_count %}
+
+                        ({{ place.user_rating_count }}
+                        reviews)
+
+                    {% endif %}
+
+                </p>
+
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="place">
+
+        No tourist places were found for
+        this destination.
+
+    </div>
+
+{% endif %}
+
+
+</div>
+
+</main>
+
+<footer>
+
+
+AccessTour | Travel Without Barriers
+
+<br><br>
+
+Accessibility information is based on
+available third-party place data and
+should be verified before travel.
+
+
+</footer>
+
+</body>
+
+</html>
+
