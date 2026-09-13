@@ -667,90 +667,43 @@ footer a:hover{
 }
 
 
+i have this right now 
+
+
 /* ================= MOBILE ================= */
 
-@media (max-width: 900px) {
+        justify-content:center;
+    }
 
-    /* Keep header clean and give it enough space so text doesn't overlap */
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 15px;
-    }
+    .hero-art{@media(max-width:900px){
 
-    .navbar .logo, 
-    .logo {
-        margin-bottom: 8px;
-        font-size: 22px;
-    }
+    .nav-links{
+        display:none;
+    }
 
-    /* Wrap navigation links nicely into two centered rows so nothing gets cut off */
-    .nav-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 6px 10px;
-        width: 100%;
-        margin: 0 0 10px 0;
-        padding: 0;
-        list-style: none;
-    }
+    .hero{
 
-    .nav-links a {
-        font-size: 12px;
-        padding: 4px 6px;
-    }
+        flex-direction:column;
 
-    /* Bring the Create Profile button neatly into the center flow */
-    .nav-links .btn, 
-    .nav-links a.btn, 
-    .create-profile-btn {
-        display: inline-block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: auto !important;
-        height: auto !important;
-        padding: 4px 10px !important;
-        font-size: 12px !important;
-        background-color: #00838f;
-        color: white !important;
-        border-radius: 15px;
-        text-align: center;
-    }
+        text-align:center;
 
-    /* Push the main hero section down just enough so it never hides behind the header */
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 20px;
-    }
+        padding-top:125px;
+    }
 
-    .hero p {
-        margin-left: auto;
-        margin-right: auto;
-    }
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
 
-    /* Restore the hero layout so your image and buttons don't get cut or distorted */
-    .hero-buttons {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+    .hero-buttons{
 
-    .hero-art, .hero img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
+        width:90%;
+        height:390px;
+    }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 
 }
 
